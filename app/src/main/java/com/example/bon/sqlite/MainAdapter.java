@@ -57,9 +57,9 @@ public class MainAdapter extends RecyclerView.Adapter<MainAdapter.ViewHolder> {
             //
             JSONObject object =jsonArray.getJSONObject(position);
             //
-            holder.tvText.setText(object.getString("text"));
+            holder.tvText.setText(object.getString("ten312"));
             //
-            holder.tvDate.setText(object.getString("date"));
+            holder.tvDate.setText(object.getString("date312"));
         }catch (JSONException e){
             e.printStackTrace();
         }
@@ -72,7 +72,7 @@ public class MainAdapter extends RecyclerView.Adapter<MainAdapter.ViewHolder> {
                             holder.getAdapterPosition()
                     );
                     String sID =object.getString("id");
-                    String sText =object.getString("text");
+                    String sText =object.getString("ten312");
 
                     //
                     Dialog dialog =new Dialog(activity);
@@ -124,7 +124,7 @@ public class MainAdapter extends RecyclerView.Adapter<MainAdapter.ViewHolder> {
                     //
                     JSONObject object =jsonArray.getJSONObject(position);
                     //
-                    String sID =object.getString("id");
+                    String sID =object.getString("id312");
                     //
                     AlertDialog.Builder builder =new AlertDialog.Builder(activity);
                     //

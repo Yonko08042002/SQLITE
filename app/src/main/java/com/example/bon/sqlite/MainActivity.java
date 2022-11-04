@@ -21,7 +21,7 @@ import java.util.Date;
 import java.util.Locale;
 
 public class MainActivity extends AppCompatActivity {
-    //Initalize variable
+    //Initialize variable
     RecyclerView recyclerView;
     FloatingActionButton btAdd;
 

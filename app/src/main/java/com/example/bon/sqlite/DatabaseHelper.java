@@ -14,7 +14,7 @@ import org.json.JSONObject;
 
 public class DatabaseHelper extends SQLiteOpenHelper {
 
-     String TableName ="table_name";
+     String TableName ="SinhVien";
 
     public DatabaseHelper(Context context){
         super(context,"database_name",null,1);
@@ -24,7 +24,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     public void onCreate(SQLiteDatabase sqLiteDatabase) {
         //Create table query
         String sQuery ="create table "+ TableName
-                +"(id INTEGER primary key autoincrement,text TEXT,date TEXT)";
+                +"(id_12 INTEGER primary key autoincrement,ten312 TEXT,date312 TEXT)";
         //Execute query
         sqLiteDatabase.execSQL(sQuery);
     }
@@ -43,8 +43,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         SQLiteDatabase database =getWritableDatabase();
         ContentValues values =new ContentValues();
         //add values
-        values.put("text",text);
-        values.put("date",date);
+        values.put("ten312",text);
+        values.put("date312",date);
         //Insert values in database
         database.insertWithOnConflict(TableName,null,
                 values,SQLiteDatabase.CONFLICT_REPLACE);
@@ -56,8 +56,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         //Initialize database
         SQLiteDatabase database =getWritableDatabase();
         //Update query
-        String sQuery ="update "+ TableName + " set text='" + text
-                +"'where id='" + id +"'";
+        String sQuery ="update "+ TableName + " set ten312='" + text
+                +"'where id312 ='" + id +"'";
         //Execute query
         database.execSQL(sQuery);
         //Close database
@@ -68,7 +68,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         //Initialize database
         SQLiteDatabase database =getWritableDatabase();
         //Delete query
-        String sQuery ="detele from "+ TableName + " where id='" + id +"'";
+        String sQuery ="detele from "+ TableName + " where id312='" + id +"'";
         //Execute query
         database.execSQL(sQuery);
         //Close database
@@ -109,9 +109,9 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
                 try {
                     //Put all values in object
-                        object.put("id",cursor.getString(0));
-                        object.put("text",cursor.getString(1));
-                        object.put("date",cursor.getString(2));
+                        object.put("id312",cursor.getString(0));
+                        object.put("ten312",cursor.getString(1));
+                        object.put("date312",cursor.getString(2));
                         //add values in json array
                         jsonArray.put(object);
                     } catch (JSONException e) {
